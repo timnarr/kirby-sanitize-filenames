@@ -5,31 +5,6 @@ namespace timnarr;
 class Sanitize
 {
 	/**
-	 * Converts a string to PascalCase.
-	 */
-	public static function toPascalCase(string $string): string
-	{
-		// Replace non-alphanumeric characters with a single space
-		$string = preg_replace('/[^A-Za-z0-9]+/', ' ', $string);
-		// Capitalize the first letter of each word and remove spaces
-		$string = str_replace(' ', '', ucwords($string));
-
-		return $string;
-	}
-
-	/**
-	 * Converts a string to camelCase.
-	 */
-	public static function toCamelCase(string $string): string
-	{
-		$string = self::toPascalCase($string);
-		// Lowercase the first character of the string
-		$string = lcfirst($string);
-
-		return $string;
-	}
-
-	/**
 	 * Adds a specified delimiter to a string, replacing non-alphanumeric characters.
 	 */
 	private static function addDelimiter(string $string, string $delimiter): string
@@ -74,18 +49,6 @@ class Sanitize
 		}
 
 		switch ($caseStyle) {
-			case 'pascal':
-				$fileName = self::toPascalCase($fileName);
-				if (!empty($prefix)) {
-					$fileName = $prefix . $fileName;
-				}
-				break;
-			case 'camel':
-				$fileName = self::toCamelCase($fileName);
-				if (!empty($prefix)) {
-					$fileName = $prefix . ucfirst($fileName);
-				}
-				break;
 			case 'snake':
 				$fileName = self::toSnakeCase($fileName);
 				if (!empty($prefix)) {
@@ -101,7 +64,7 @@ class Sanitize
 				break;
 		}
 
-		$newfile = $file->changeName($fileName, false);
+		$newfile = $file->changeName($fileName);
 
 		return $newfile;
 

@@ -2,7 +2,7 @@
 	"name": "timnarr/kirby-sanitize-filenames",
 	"description": "This plugin provides filename sanitizing by using file hooks.",
 	"type": "kirby-plugin",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"license": "MIT",
 	"homepage": "https://github.com/timnarr/kirby-sanitize-filenames",
 	"authors": [
