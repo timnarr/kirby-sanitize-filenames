@@ -1,20 +1,11 @@
 # Kirby Sanitize Filenames
-
-This plugin provides filename manipulation using file hooks for Kirby CMS.
-
-## Features
-- Converts filenames to different case styles (PascalCase, camelCase, snake_case, kebab-case).
-- Sanitizes file names.
-- Option to add a prefix to every file.
+**Sanitize Filenames for Kirby CMS** – This plugin automatically transforms and sanitizes filenames using file hooks. It can converts filenames to different case styles, like `PascalCase`, `camelCase`, `snake_case`, and `kebab-case`. It also sanitizes filenames by modifying special characters and allows adding a custom prefix for consistent file naming.
 
 ## Installation
-
 ### Download
-
 Download and copy this repository to `/site/plugins/kirby-sanitize-filenames`.
 
 ### Composer
-
 ```
 composer require timnarr/kirby-sanitize-filenames
 ```
@@ -28,7 +19,6 @@ This plugin does not support the `changeName` hook because file renaming, which 
 
 ## Config
 You can choose between different case styles: `pascal`, `camel`, `snake` and `kebab` (which is also the default style). The prefix will not be transformed in any way, except for appending a delimiter: `_` for snake and `-` for kebab style.
-
 
 ```php
 'timnarr.sanitize-filenames' => [
