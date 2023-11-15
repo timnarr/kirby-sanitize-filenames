@@ -18,7 +18,7 @@ The plugin listens for these two Kirby hooks, and when these are triggered, the 
 This plugin does not support the `changeName` hook because file renaming, which occurs after the `create` and `replace` hooks, will trigger the `changeName` hook too. This could lead to some misbehaviors. However, it is beneficial to be able to change the filename after the initial upload and filename manipulation.
 
 ## Config
-You can choose between `snake` and `kebab` style. The prefix will also be transformed to a [safe-name](kirby/src/Filesystem/F.php#L741) and a delimiter gets appended: `_` for snake and `-` for kebab style.
+You can choose between `snake` and `kebab` style. The prefix will also be transformed to a [safe-name](https://github.com/getkirby/kirby/tree/3.9.8/src/Filesystem/F.php#L741) and a delimiter gets appended: `_` for snake and `-` for kebab style.
 
 ```php
 'timnarr.sanitize-filenames' => [
